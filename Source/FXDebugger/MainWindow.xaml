@@ -9,7 +9,7 @@
     <Grid Background="#FF151515">
        
         <Button x:Name="Continue" Content="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Click="ContinueButton_Click" Height="30"/>
-        <TextBox x:Name="Output" Margin="200,0,0,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="Black" Foreground="Lime" OpacityMask="White" FontSize="18" BorderBrush="{x:Null}" IsReadOnly="True"/>
+        <TextBox x:Name="Output" Margin="200,0,0,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="Black" Foreground="White" OpacityMask="White" BorderBrush="{x:Null}" IsReadOnly="True"/>
         <Button x:Name="About" Content="About" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Click="AboutButton_Click" Height="30" Margin="0,30,0,0"/>
 
     </Grid>
