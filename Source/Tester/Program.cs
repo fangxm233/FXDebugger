@@ -14,11 +14,10 @@ namespace Tester
             Debug.Debugger.Pause();
             Debug.Debugger.Log("fangxm 6666666,Asixa 更666666");
             //Asixa
-<<<<<<< HEAD
-            //Asixa233
-=======
+
+            //诶嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿
             //fangxm23333
->>>>>>> 9d28e5b544115dfe73da0e5708c2b45a5de86f9e
+
             Debug.Debugger.Log("是是是");
             //test//fangxm
             Debug.Debugger.Pause();
