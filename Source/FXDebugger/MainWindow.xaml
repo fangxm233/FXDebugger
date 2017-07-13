@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="FXDebugger" Height="350" Width="525">
     <Grid Background="#FF151515">
-        <Button x:Name="Continue" Content="continue" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="ContinueButton_Click"/>
+       
         <Button x:Name="Continue" Content="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Click="ContinueButton_Click" Height="30"/>
         <TextBox x:Name="Output" Margin="200,0,0,0" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="Black" Foreground="Lime" OpacityMask="White" FontSize="18" BorderBrush="{x:Null}" IsReadOnly="True"/>
         <Button x:Name="About" Content="About" HorizontalAlignment="Left" VerticalAlignment="Top" Width="195" Click="AboutButton_Click" Height="30" Margin="0,30,0,0"/>
