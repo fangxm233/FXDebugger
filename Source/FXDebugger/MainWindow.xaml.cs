@@ -80,7 +80,6 @@ namespace FXDebugger
             Console.WriteLine("continue");
             Print("continue");
             isPause = false;
-            Output.ScrollToEnd();//保持输出框 显示内容
         }
 
         void OutputDataReceived(string s)
@@ -97,6 +96,7 @@ namespace FXDebugger
             Output.Dispatcher.BeginInvoke(new Action(() =>
             {
                 Output.Text = Output.Text + s + Environment.NewLine;
+                Output.ScrollToEnd();
             }));
             
         }
