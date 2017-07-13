@@ -1,0 +1,6 @@
+c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\bin\Debug\Tester.exe.config
+c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\bin\Debug\Tester.exe
+c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\bin\Debug\Tester.pdb
+c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\obj\Debug\Tester.exe
+c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\obj\Debug\Tester.pdb
+c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
