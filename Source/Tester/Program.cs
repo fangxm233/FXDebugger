@@ -13,7 +13,14 @@ namespace Tester
             new Debug().Initialization();
             Debug.Debugger.Pause();
             Debug.Debugger.Log("fangxm 6666666,Asixa 更666666");
+            //Asixa
+
+            //诶嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿
+            //fangxm23333
+            //VS试试
+=======
             Debug.Debugger.Log("是是是");
+            //test//fangxm
             Debug.Debugger.Pause();
             Debug.Debugger.Close();
         }
