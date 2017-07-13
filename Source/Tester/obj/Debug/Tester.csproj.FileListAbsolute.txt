@@ -4,3 +4,9 @@ c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\bin\Debu
 c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\obj\Debug\Tester.exe
 c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\obj\Debug\Tester.pdb
 c:\users\fangxm\documents\visual studio 2017\Projects\FXDebugger\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\bin\Debug\Tester.exe.config
+E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\bin\Debug\Tester.exe
+E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\bin\Debug\Tester.pdb
+E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\obj\Debug\Tester.exe
+E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\obj\Debug\Tester.pdb
