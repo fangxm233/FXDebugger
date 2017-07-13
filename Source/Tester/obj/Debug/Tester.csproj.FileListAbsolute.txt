@@ -10,3 +10,9 @@ E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\bin\Debug\Tester.pdb
 E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
 E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\obj\Debug\Tester.exe
 E:\Programing\C#\GitHubProject\FXDebugger\Source\Tester\obj\Debug\Tester.pdb
+G:\GIT\FXDebugger\Source\Tester\bin\Debug\Tester.exe.config
+G:\GIT\FXDebugger\Source\Tester\bin\Debug\Tester.exe
+G:\GIT\FXDebugger\Source\Tester\bin\Debug\Tester.pdb
+G:\GIT\FXDebugger\Source\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+G:\GIT\FXDebugger\Source\Tester\obj\Debug\Tester.exe
+G:\GIT\FXDebugger\Source\Tester\obj\Debug\Tester.pdb
