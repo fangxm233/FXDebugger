@@ -26,9 +26,9 @@ class Debug
         process.StartInfo.RedirectStandardError = true;
         process.StartInfo.RedirectStandardInput = true;
         //****************下面就是我打不开的原因 --Asixa
-        process.StartInfo.FileName = "C:/Users/fangxm/Documents/visual studio 2017/Projects/FXDebugger/FXDebugger/bin/Debug/FXDebugger.exe";
+        process.StartInfo.FileName = "G:/GIT/FXDebugger/Source/FXDebugger/bin/Debug/FXDebugger.exe";
         process.StartInfo.UseShellExecute = false;
-
+        //2333333
         process.Start();
         process.OutputDataReceived += OutputDataReceived;
         process.ErrorDataReceived += ErrorDataReceived;
