@@ -19,19 +19,13 @@ using System.Threading;
 
 namespace FXDebugger
 {
-    /// <summary>
-    /// MainWindow.xaml 的交互逻辑
-    /// </summary>
     public partial class MainWindow : Window
     {
-
         bool isPause = false;
-
         delegate void OutputDataReceive(string s);
         event OutputDataReceive OutputDataReceivedEvent;
         //Process process = new Process();
         //StreamWriter StandardInput;
-
         public MainWindow()
         {
             DispatcherTimer timer = new DispatcherTimer()
@@ -52,7 +46,7 @@ namespace FXDebugger
                     OutputDataReceivedEvent.Invoke(s);
                 }
             });
-            #region
+            #region 奇怪的注释
             ////System.Threading.Thread.Sleep(1000);
             ////Console.WriteLine("?????");
             //int i = Convert.ToInt32(Console.ReadLine());
@@ -86,6 +80,7 @@ namespace FXDebugger
             Console.WriteLine("continue");
             Print("continue");
             isPause = false;
+            Output.ScrollToEnd();//保持输出框 显示内容
         }
 
         void OutputDataReceived(string s)
@@ -110,5 +105,17 @@ namespace FXDebugger
         {
 
         }
+
+
+
+        #region Asixa的奇怪的东西
+
+        private void AboutButton_Click(object sender, RoutedEventArgs e)
+        {
+            Asixa.About window = new Asixa.About();
+            window.Show();
+        }
+
+        #endregion
     }
 }

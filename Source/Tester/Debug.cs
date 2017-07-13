@@ -25,6 +25,7 @@ class Debug
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         process.StartInfo.RedirectStandardInput = true;
+        //****************下面就是我打不开的原因 --Asixa
         process.StartInfo.FileName = "C:/Users/fangxm/Documents/visual studio 2017/Projects/FXDebugger/FXDebugger/bin/Debug/FXDebugger.exe";
         process.StartInfo.UseShellExecute = false;
 
@@ -37,10 +38,6 @@ class Debug
         StandardInput = process.StandardInput;
     }
 
-    /// <summary>
-    /// Pause this program.
-    /// You can continue this program by clicking the Continue button.
-    /// </summary>
     public void Pause()
     {
         StandardInput.WriteLine("pause");
@@ -48,9 +45,6 @@ class Debug
         while (isPause){}
     }
 
-    /// <summary>
-    /// Close the debugger.
-    /// </summary>
     public void Close()
     {
         process.WaitForExit(100);
@@ -59,9 +53,7 @@ class Debug
         isPause = false;
     }
 
-    /// <summary>
-    /// Print something onto the debugger window.
-    /// </summary>
+
     public void Log(object t)
     {
         StandardInput.WriteLine(t);
