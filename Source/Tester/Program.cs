@@ -10,6 +10,8 @@ namespace Tester
     {
         public int i = 1;
         string s = "fdfdfdfdfdfdfd";
+        public int[] i2 = new int[2];
+
         static void Main()
         {
             new Debug().Initialization();

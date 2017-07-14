@@ -85,6 +85,7 @@ class Debug
 
     public void GetImformation()
     {
+
         var method = new StackFrame(1).GetMethod();
         var property = (from p in method.DeclaringType.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
                         where p.GetGetMethod(true) == method || p.GetSetMethod(true) == method
@@ -95,7 +96,7 @@ class Debug
         {
             Assembly assembly = Assembly.GetExecutingAssembly(); // 获取当前程序集 
             object obj = assembly.CreateInstance(method.DeclaringType.Namespace + "." + method.DeclaringType.Name);
-            Log(item.Name + "的值为" + item.GetValue(obj).ToString());
+            Log(item.Name + " 的值为 " + item.GetValue(obj).ToString());
 
 
             #region 奇怪的注释
