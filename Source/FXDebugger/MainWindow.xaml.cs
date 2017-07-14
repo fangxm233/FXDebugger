@@ -24,8 +24,6 @@ namespace FXDebugger
         bool isPause = false;
         delegate void OutputDataReceive(string s);
         event OutputDataReceive OutputDataReceivedEvent;
-        //Process process = new Process();
-        //StreamWriter StandardInput;
         public MainWindow()
         {
             OutputDataReceivedEvent += OutputDataReceived;
@@ -73,7 +71,7 @@ namespace FXDebugger
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("continue");
-            Print("continue");
+            Print("Continue...");
             isPause = false;
         }
 
@@ -82,8 +80,12 @@ namespace FXDebugger
             if (s == "pause")
             {
                 isPause = true;
+                Print("Pause...");
             }
-            Print(s);
+            else
+            {
+                Print(s);
+            }
         }
 
         void Print(string s)
@@ -96,11 +98,12 @@ namespace FXDebugger
             
         }
 
-        void ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        private void GetImformationButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Console.WriteLine("getImformation");
+            Print("GetImformation...");
+            isPause = false;
         }
-
 
 
         #region Asixa的奇怪的东西

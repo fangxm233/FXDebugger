@@ -15,20 +15,19 @@ class Debug
     StreamWriter StandardInput;
     bool isPause = false;
 
+    bool getI = false;
+
     /// <summary>
     /// Run it before you use the dubugger.
     /// </summary>
     public void Initialization()
     {
         Debugger = this;
-        //process.StartInfo.CreateNoWindow = true;
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.RedirectStandardError = true;
         process.StartInfo.RedirectStandardInput = true;
-        //****************下面就是我打不开的原因 --Asixa
         process.StartInfo.FileName = "G:/GIT/FXDebugger/Source/FXDebugger/bin/Debug/FXDebugger.exe";
         process.StartInfo.UseShellExecute = false;
-        //2333333
         process.Start();
         process.OutputDataReceived += OutputDataReceived;
         process.ErrorDataReceived += ErrorDataReceived;
@@ -41,7 +40,13 @@ class Debug
     {
         StandardInput.WriteLine("pause");
         isPause = true;
-        while (isPause){}
+        while (isPause)
+        {
+            if (getI)
+            {
+                GetImformation(1);
+            }
+        }
     }
 
     public void Close()
@@ -53,20 +58,40 @@ class Debug
     }
 
 
-    public void Log(object t)
+    void Output(object t)
     {
         StandardInput.WriteLine(t);
     }
 
+    public void Log(object t)
+    {
+        StandardInput.WriteLine("Log " + t);
+    }
+
+    public void LogWarning(object t)
+    {
+        StandardInput.WriteLine("Warning " + t);
+    }
+
     void OutputDataReceived(object sender, DataReceivedEventArgs e)
     {
-        if(e.Data == "continue")
+        switch (e.Data)
         {
-            isPause = false;
-        }
-        else
-        {
-            Console.WriteLine(e.Data);
+            case "continue":
+                {
+                    isPause = false;
+                    break;
+                }
+            case "getImformation":
+                {
+                    getI = true;
+                    break;
+                }
+            default:
+                {
+                    Console.WriteLine(e.Data);
+                    break;
+                }
         }
     }
 
@@ -87,17 +112,16 @@ class Debug
     {
 
         var method = new StackFrame(1).GetMethod();
-        var property = (from p in method.DeclaringType.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
-                        where p.GetGetMethod(true) == method || p.GetSetMethod(true) == method
-                        select p).FirstOrDefault();
+        //var property = (from p in method.DeclaringType.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+        //                where p.GetGetMethod(true) == method || p.GetSetMethod(true) == method
+        //                select p).FirstOrDefault();
         //Console.WriteLine(method.DeclaringType.GetProperties()[0]);
         BindingFlags flag = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
         foreach (FieldInfo item in method.DeclaringType.GetFields(flag))
         {
             Assembly assembly = Assembly.GetExecutingAssembly(); // 获取当前程序集 
             object obj = assembly.CreateInstance(method.DeclaringType.Namespace + "." + method.DeclaringType.Name);
-            Log(item.Name + " 的值为 " + item.GetValue(obj).ToString());
-
+            Output("The value of " + item.Name + " is " + item.GetValue(obj).ToString());
 
             #region 奇怪的注释
             //Console.WriteLine(method.DeclaringType.Namespace);
@@ -114,6 +138,20 @@ class Debug
             //Console.WriteLine(item.GetValue(obj).ToString());
             #endregion
         }
+    }
+
+    void GetImformation(int i)
+    {
+
+        var method = new StackFrame(2).GetMethod();
+        BindingFlags flag = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+        foreach (FieldInfo item in method.DeclaringType.GetFields(flag))
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly(); // 获取当前程序集 
+            object obj = assembly.CreateInstance(method.DeclaringType.Namespace + "." + method.DeclaringType.Name);
+            Output("The value of " + item.Name + " is " + item.GetValue(obj).ToString());
+        }
+        getI = false;
     }
 }
 
