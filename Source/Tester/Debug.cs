@@ -28,9 +28,11 @@ class Debug
         process.StartInfo.RedirectStandardInput = true;
         process.StartInfo.FileName = "G:/GIT/FXDebugger/Source/FXDebugger/bin/Debug/FXDebugger.exe";
         process.StartInfo.UseShellExecute = false;
+
         process.Start();
         process.OutputDataReceived += OutputDataReceived;
         process.ErrorDataReceived += ErrorDataReceived;
+
         process.BeginOutputReadLine();
         process.BeginErrorReadLine();
         StandardInput = process.StandardInput;
@@ -38,6 +40,7 @@ class Debug
 
     public void Pause()
     {
+        if (process.HasExited) return;
         StandardInput.WriteLine("pause");
         isPause = true;
         while (isPause)
@@ -51,6 +54,7 @@ class Debug
 
     public void Close()
     {
+        if (process.HasExited) return;
         process.WaitForExit(100);
         process.Kill();
         StandardInput.Close();
@@ -65,11 +69,13 @@ class Debug
 
     public void Log(object t)
     {
+        if (process.HasExited) return;
         StandardInput.WriteLine("Log " + t);
     }
 
     public void LogWarning(object t)
     {
+        if (process.HasExited) return;
         StandardInput.WriteLine("Warning " + t);
     }
 
@@ -108,9 +114,12 @@ class Debug
         return (T)field.GetValue(instance, null);
     }*/
 
+    /// <summary>
+    /// Gets the value of all the member variables of the class.
+    /// </summary>
     public void GetImformation()
     {
-
+        if (process.HasExited) return;
         var method = new StackFrame(1).GetMethod();
         //var property = (from p in method.DeclaringType.GetProperties(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
         //                where p.GetGetMethod(true) == method || p.GetSetMethod(true) == method
@@ -142,7 +151,6 @@ class Debug
 
     void GetImformation(int i)
     {
-
         var method = new StackFrame(2).GetMethod();
         BindingFlags flag = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
         foreach (FieldInfo item in method.DeclaringType.GetFields(flag))
