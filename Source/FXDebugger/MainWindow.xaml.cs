@@ -28,12 +28,6 @@ namespace FXDebugger
         //StreamWriter StandardInput;
         public MainWindow()
         {
-            DispatcherTimer timer = new DispatcherTimer()
-            {
-                Interval = TimeSpan.FromSeconds(0.1)
-            };
-            timer.Tick += GetMessage;
-            timer.Start();
             OutputDataReceivedEvent += OutputDataReceived;
 
             Task.Run(() =>
@@ -47,6 +41,12 @@ namespace FXDebugger
                 }
             });
             #region 奇怪的注释
+            //DispatcherTimer timer = new DispatcherTimer()
+            //{
+            //    Interval = TimeSpan.FromSeconds(0.1)
+            //};
+            //timer.Tick += GetMessage;
+            //timer.Start();
             ////System.Threading.Thread.Sleep(1000);
             ////Console.WriteLine("?????");
             //int i = Convert.ToInt32(Console.ReadLine());
@@ -67,12 +67,7 @@ namespace FXDebugger
             //process.BeginOutputReadLine();
             //process.BeginErrorReadLine();
             //Console.WriteLine("?????");
-            #endregion 
-        }
-
-        void GetMessage(object sender, EventArgs e)
-        {
-
+            #endregion
         }
 
         private void ContinueButton_Click(object sender, RoutedEventArgs e)

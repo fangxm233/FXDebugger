@@ -8,18 +8,15 @@ namespace Tester
 {
     class Program
     {
-        static void Main(string[] args)
+        public int i = 1;
+        string s = "fdfdfdfdfdfdfd";
+        static void Main()
         {
             new Debug().Initialization();
             Debug.Debugger.Pause();
             Debug.Debugger.Log("fangxm 6666666,Asixa 更666666");
-            
-
-            //诶嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿
-            //fangxm23333
-            //VS试试
-
             Debug.Debugger.Log("是是是");
+            Debug.Debugger.GetImformation();
             Debug.Debugger.Pause();
             Debug.Debugger.Close();
         }
